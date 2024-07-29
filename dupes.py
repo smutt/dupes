@@ -49,6 +49,10 @@ for apath in args.path:
           if os.access(line, os.R_OK):
             ffs.append(line.path)
 
+  else:
+    print(str(apath) + " No such file or directory")
+    exit(1)
+
 hashes = {}
 for ff in ffs:
   hexd = sha256_file(ff)
